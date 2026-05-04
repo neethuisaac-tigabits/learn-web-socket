@@ -29,4 +29,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
+
+    public function orders() {
+        return $this->hasMany(Order::class);
+    }
 }

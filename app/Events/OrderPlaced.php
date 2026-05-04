@@ -35,8 +35,8 @@ class OrderPlaced implements ShouldBroadcast
         Log::info("broadcastOn method called");
         return [
             new PrivateChannel('orders.' . $this->order->id),
-            new PresenceChannel('test.' . $this->order->id),
-            new Channel('updates'),
+            // new PresenceChannel('test.' . $this->order->id),
+            // new Channel('updates'),
         ];
     }
 }
