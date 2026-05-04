@@ -4,6 +4,7 @@
     {{-- ... --}}
 
     @vite(['resources/css/app.css', 'resources/js/bootstrap.js', 'resources/js/orders.js',])
+    <link rel="stylesheet" href="{{ asset('/style.css') }}">
 </head>
 <body>
     <h1 class="text-bold">Home</h1>

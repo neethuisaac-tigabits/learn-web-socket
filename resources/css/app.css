@@ -12,3 +12,7 @@
 h1, h2 {
     font-weight: 600;
 }
+#notification {
+    border: 1px solid lime;
+    width: fit-content;
+}
