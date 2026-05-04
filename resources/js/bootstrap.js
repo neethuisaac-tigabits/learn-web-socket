@@ -13,3 +13,4 @@ window.Echo = new Echo({
     enabledTransports: ['ws', 'wss'],
 });
 console.log('bootrstrap.js');
+console.log('Echo', window.Echo);

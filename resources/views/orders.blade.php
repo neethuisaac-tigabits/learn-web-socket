@@ -3,7 +3,7 @@
 <head>
     {{-- ... --}}
 
-    @vite(['resources/css/app.css', 'resources/js/bootstrap.js', 'resources/js/orders.js'])
+    @vite(['resources/css/app.css', 'resources/js/bootstrap.js', 'resources/js/orders.js',])
 </head>
 <body>
     <h1 class="text-bold">Home</h1>

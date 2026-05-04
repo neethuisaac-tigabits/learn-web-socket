@@ -13,16 +13,19 @@ use Illuminate\Support\Facades\Log;
 
 use App\Models\Order;
 
-class OrderPlaced implements ShouldBroadcast
+
+class OrderChanged
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
      * Create a new event instance.
      */
-    public function __construct(public Order $order)
+    public function __construct(
+        public $order
+    )
     {
-        Log::info("Order placed event created for Order #". $order->bill_no . " with amount {$order->amount}");
+        Log::info("OrderChanged event created");
     }
 
     /**
@@ -32,7 +35,7 @@ class OrderPlaced implements ShouldBroadcast
      */
     public function broadcastOn(): array
     {
-        Log::info("broadcastOn method called");
+        Log::info("broadcastOn method called for OrderChanged");
         return [
             new PrivateChannel('orders.' . $this->order->id),
             new PresenceChannel('test.' . $this->order->id),
