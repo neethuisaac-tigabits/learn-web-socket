@@ -20,4 +20,5 @@ Route::group([
 
 Route::get('/login', fn() => view('login'))->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'destroy']);
 Route::get('/dashboard', fn() => 'dashboard')->middleware('auth');

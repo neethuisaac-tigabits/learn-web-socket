@@ -1,9 +1,9 @@
 <x-layout>
-    <ul>
+    <table class="table">
         @foreach($orders as $order)
-        <li><a href="/orders/{{$order->id}}">{{ $order->id }} Amount: {{ $order->amount }}</a></li>
+        <tr><td>{{ $loop->iteration }}</td><td><a href="/orders/{{$order->id}}">Order #{{ $order->id }} Amount: {{ $order->amount }}</a></td></tr>
         @endforeach
-    </ul>
+    </table>
     <div id="notification">
     </div>   
 </x-layout>
