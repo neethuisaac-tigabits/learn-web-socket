@@ -15,6 +15,6 @@
     <h2>Order #{{ $order->id }}</h2>
     <p><b>{{ $order->name }}</b></p>
     <div id="notification">
-        
+        Amount: {{ $order->amount }}
     </div>   
 </body>

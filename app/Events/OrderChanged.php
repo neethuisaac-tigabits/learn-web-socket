@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Log;
 use App\Models\Order;
 
 
-class OrderChanged
+class OrderChanged implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -22,7 +22,7 @@ class OrderChanged
      * Create a new event instance.
      */
     public function __construct(
-        public $order
+        public Order $order
     )
     {
         Log::info("OrderChanged event created");

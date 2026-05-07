@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Events\OrderPlaced;
 use App\Events\OrderChanged;
 use App\Models\Order;
 use Illuminate\Support\Facades\Log;
@@ -23,7 +22,6 @@ class OrderController extends Controller
         $order->amount += 1;
         $order->save();
 
-        OrderPlaced::dispatch($order);
         OrderChanged::dispatch($order);
 
         return "done {$order->amount}";
