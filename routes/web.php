@@ -8,9 +8,16 @@ Route::get('/', function () {
     // return view('welcome');
     return view('home');
 });
-Route::get('/orders', [OrderController::class, 'index']);
-Route::get('/orders/update/{id}', [OrderController::class, 'update'])->where(['id' => '[0-9]+'])->middleware('auth');
-Route::get('/orders/{id}', [OrderController::class, 'show'])->where(['id' => '[0-9]+'])->middleware('auth');
+Route::group([
+    'prefix' => 'orders'
+], function() {
+    Route::get('/', [OrderController::class, 'index']);
+    Route::post('/', [OrderController::class, 'store']);
+    Route::get('/create', fn() => view('orders.create'));
+    Route::get('/update/{id}', [OrderController::class, 'update'])->where(['id' => '[0-9]+'])->middleware('auth');
+    Route::get('/{id}', [OrderController::class, 'show'])->where(['id' => '[0-9]+'])->middleware('auth');
+});
+
 Route::get('/login', fn() => view('login'))->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/dashboard', fn() => 'dashboard')->middleware('auth');

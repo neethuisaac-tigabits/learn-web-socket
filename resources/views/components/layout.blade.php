@@ -14,6 +14,9 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/orders">All Orders</a></li>
+                @if(auth()->check())
+                <li><a href="/orders/create">New Order</a></li>
+                @endif
             </ul>
         </nav>
         {{ $slot }}
