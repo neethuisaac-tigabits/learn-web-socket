@@ -2,21 +2,17 @@ import { createRoot } from 'react-dom/client';
 
 // document.body.innerHTML = '<div id="app"></div>';
 
-function NavigationBar() {
+function Footer() {
     return (
-    <nav>
-        <ul class="main-nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+        <footer>
+            &copy; Tigabits @ 2026
+        </footer>
     );
 }
 
 
-const domNode = document.getElementById('navigation');
+const domNode = document.getElementById('footer');
 const root = createRoot(domNode);
-root.render(<NavigationBar />);
+root.render(<Footer />);
 console.log('trying react');
 
