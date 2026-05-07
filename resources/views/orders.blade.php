@@ -1,16 +1,9 @@
-
-<!DOCTYPE html>
-<head>
-    {{-- ... --}}
-
-    @vite(['resources/css/app.css', 'resources/js/bootstrap.js', 'resources/js/orders.js',])
-</head>
-<body>
-    <h1 class="text-bold">Home</h1>
-    <div id="navigation">
-
-    </div>
-    <h2>Orders</h2>
+<x-layout>
+    <ul>
+        @foreach($orders as $order)
+        <li><a href="/orders/{{$order->id}}">{{ $order->id }} Amount: {{ $order->amount }}</a></li>
+        @endforeach
+    </ul>
     <div id="notification">
     </div>   
-</body>
+</x-layout>

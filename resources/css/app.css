@@ -16,3 +16,23 @@ h1, h2 {
     border: 1px solid lime;
     width: fit-content;
 }
+nav {
+    display: flex;
+    background-color: azure;
+}
+nav ul {
+    display: flex;
+}
+nav ul li {
+    padding: 10px;
+    font-weight: 600;
+}
+h1{
+    padding: 20px 0;
+}
+h1{
+    padding: 10px 0;
+}
+a:link, a:hover, a:visited {
+    text-decoration: none!important;
+}

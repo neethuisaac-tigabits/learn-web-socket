@@ -10,11 +10,8 @@ use Illuminate\Support\Facades\Log;
 class OrderController extends Controller
 {
     public function index() {
-        $order = Order::first();
-
-        OrderPlaced::dispatch($order);
-
-        return view('orders');
+        $orders = Order::all();
+        return view('orders', compact('orders'));
 
     }
     public function update(Request $request, $id) {
