@@ -11,7 +11,6 @@ use App\Models\Order;
 class LoginController extends Controller
 {
     public function authenticate(Request $request) : RedirectResponse {
-        Log::info(['web login request:', request()->all()]);
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
