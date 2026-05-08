@@ -36,3 +36,8 @@ h1{
 a:link, a:hover, a:visited {
     text-decoration: none!important;
 }
+.btn-generic {
+    padding: 10px;
+    background-color: blueviolet;
+    color:white;
+}

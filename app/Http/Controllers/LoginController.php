@@ -45,4 +45,10 @@ class LoginController extends Controller
             'email' => 'Invalid email'
         ])->onlyInput('email');
     }
+    public function destroy(Request $request) : RedirectResponse{
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
 }

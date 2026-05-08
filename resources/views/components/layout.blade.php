@@ -14,6 +14,12 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/orders">All Orders</a></li>
+                @if(auth()->check())
+                <li><a href="/orders/create">New Order</a></li>
+                <li><a href="/logout">Logout</a></li>
+                @else
+                <li><a href="/login">Login</a></li>
+                @endif
             </ul>
         </nav>
         {{ $slot }}
